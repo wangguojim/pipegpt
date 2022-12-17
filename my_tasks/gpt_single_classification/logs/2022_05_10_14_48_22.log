@@ -1,0 +1,12 @@
+2022-05-10 14:48:23,490 - server.py[line:75] - INFO: Started server process [33176]
+2022-05-10 14:48:23,490 - on.py[line:45] - INFO: Waiting for application startup.
+2022-05-10 14:48:23,491 - on.py[line:59] - INFO: Application startup complete.
+2022-05-10 14:48:23,494 - server.py[line:206] - INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2022-05-10 14:48:29,915 - main.py[line:24] - INFO: input:    {'server': '好的，正在为您办理XXX业务，业务套餐为XXX元xxx分钟包含XX兆流量，请稍候', 'client': '没听见'}
+2022-05-10 14:48:30,276 - main.py[line:27] - INFO: output:   {'res': '默认', 'confidence': 0.9996640682220459}
+2022-05-10 14:49:16,412 - main.py[line:24] - INFO: input:    {'server': '好的，正在为您办理XXX业务，业务套餐为XXX元xxx分钟包含XX兆流量，请稍候', 'client': '没听见'}
+2022-05-10 14:49:16,700 - main.py[line:27] - INFO: output:   {'res': '默认', 'confidence': 0.9996640682220459}
+2022-05-10 14:51:00,994 - server.py[line:252] - INFO: Shutting down
+2022-05-10 14:51:01,096 - on.py[line:64] - INFO: Waiting for application shutdown.
+2022-05-10 14:51:01,097 - on.py[line:75] - INFO: Application shutdown complete.
+2022-05-10 14:51:01,097 - server.py[line:85] - INFO: Finished server process [33176]

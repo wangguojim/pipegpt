@@ -1,0 +1,31 @@
+{
+  "train_batch_size" : 960,
+  "train_micro_batch_size_per_gpu": 10,
+  "steps_per_print": 1,
+  "zero_optimization": {
+        "stage": 0
+    },
+    "optimizer": {
+    "type": "OneBitAdam",
+    "params": {
+      "lr": 4e-4,
+      "freeze_step": 2,
+      "cuda_aware": false,
+      "comm_backend_name": "nccl"
+    }
+    },
+
+  "gradient_clipping": 1.0,
+  "prescale_gradients": true,
+
+  "fp16": {
+    "enabled": true,
+    "loss_scale": 0,
+    "loss_scale_window": 500,
+    "hysteresis": 2,
+    "min_loss_scale": 1,
+    "initial_scale_power": 12
+  },
+
+  "wall_clock_breakdown" : true
+}

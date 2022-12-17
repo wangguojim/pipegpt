@@ -1,0 +1,71 @@
+{
+  "train_batch_size" : 960,
+  "train_micro_batch_size_per_gpu": 1,
+  "steps_per_print": 1,
+
+  "zero_optimization": {
+    "stage": 0,
+    "elastic_checkpoint": true
+  },
+
+  "gradient_clipping": 1.0,
+  "prescale_gradients": true,
+
+  "fp16": {
+    "enabled": true,
+    "loss_scale": 0,
+    "loss_scale_window": 500,
+    "hysteresis": 2,
+    "min_loss_scale": 1,
+    "initial_scale_power": 11
+  },
+
+  "bf16": {
+    "enabled": false
+  },
+  "curriculum_learning": {
+    "enabled": false,
+    "curriculum_type": "seqlen",
+    "min_difficulty": 80,
+    "max_difficulty": 1024,
+    "schedule_type": "fixed_linear",
+    "schedule_config": {
+      "total_curriculum_step": 113224,
+      "difficulty_step": 8
+    }
+  },
+  "comms_logger": {
+    "enabled": true,
+    "verbose": false,
+    "prof_all": true,
+    "debug": false
+  },
+  "tensorboard": {
+    "enabled": true,
+    "output_path": "/raid/nlp/ckpts/ckpt-gpt-1p3-MoE-24/tensorboard/gpt-1.3B-lr-1.2e-4-minlr-1.0e-6-bs-960-gpus-8-mp-1-pp-1-ep-16-mlc-0.01-cap-1.0-drop-false_dgx01gpunode_2022.11.10-15.35.43",
+    "job_name": "train_moe"
+  },
+  "optimizer": {
+    "type": "ZeroOneAdam",
+    "params": {
+      "lr": 1e-3,
+      "weight_decay": 0.01,
+      "bias_correction": false,
+      "var_freeze_step": 1000,
+      "var_update_scaler": 16,
+      "local_step_scaler": 1000,
+      "local_step_clipper": 16,
+      "cuda_aware": false,
+      "comm_backend_name": "nccl"
+    }
+  },
+  "flops_profiler": {
+    "enabled": true,
+    "profile_step": 200,
+    "module_depth": -1,
+    "top_modules": 1,
+    "detailed": true,
+    "output_file": null
+    },
+  "wall_clock_breakdown" : false
+}

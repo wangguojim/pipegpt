@@ -1,0 +1,8 @@
+special_tokens:
+    - "[NUM]"  # numbers
+    - "[E_WORD]" # english words
+    - "[TURN]" # turn
+    - "[DEN]" # denoise
+    - "[GEN]" # generate
+    - "[SPE_1]" # speaker1
+    - "[SPE_2]" # speaker2
